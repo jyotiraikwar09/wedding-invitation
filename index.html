@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonali ❤ Prabhat — Wedding Invitation | 03 December 2026</title>
+<meta name="description" content="With the blessings of God, celebrate the wedding of आयु. सोनाली कुमारी & चि. प्रभात कुमार — 01–03 December 2026, आशीर्वाद मैरेज हॉल, स्टेशन रोड, चन्द्रपुरा.">
+<!-- Fonts: Playfair Display, Cinzel, Great Vibes, Poppins, Noto Sans Devanagari -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- CARD EXTRACT, RISE & SPARKLE VAPORISE ANIMATION -->
+<style>
+  /* Jab envelope band ho, card andar chhupa rahe */
+  #envelope {
+    overflow: hidden;
+    position: relative;
+  }
+  #envelope .env-flap {
+    z-index: 5 !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-origin: top center !important;
+  }
+  #envelope .wax-seal {
+    z-index: 6 !important;
+    transition: opacity 0.35s ease, transform 0.35s ease !important;
+  }
+
+  #envelope:not(.env-unlocked) .env-letter {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    transform: translateY(35px) scale(0.9) !important;
+  }
+
+  /* STEP 1: Flap khulega aur Card envelope se bahar nikal kar upar jayega */
+  #envelope.env-unlocked {
+    overflow: visible !important;
+  }
+  #envelope.env-unlocked .wax-seal {
+    opacity: 0 !important;
+    transform: scale(0.4) !important;
+  }
+  #envelope.env-unlocked .env-flap {
+    transform: rotateX(180deg) !important;
+    z-index: 1 !important;
+  }
+  #envelope.env-unlocked .env-letter {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10 !important;
+    transform: translateY(-135px) scale(1.08) !important;
+    box-shadow: 0 18px 45px rgba(254, 213, 71, 0.55), 0 0 25px rgba(255, 255, 255, 0.4) !important;
+    transition: opacity 0.4s ease 0.2s, transform 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.2s, box-shadow 0.8s ease 0.2s !important;
+  }
+
+  /* STEP 2: Sirf Card aur upar jayega aur Sparkle hokar Vaporise (gayab) ho jayega */
+  #envelope.env-unlocked .env-letter.card-vaporising {
+    transform: translateY(-210px) scale(1.22) !important;
+    opacity: 0 !important;
+    filter: brightness(2.8) contrast(1.2) blur(10px) drop-shadow(0 0 45px #fed547) !important;
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.85s ease !important;
+  }
+
+  /* Jab card vaporise ho raha ho, niche ka khali envelope halka fade ho jaye */
+  .envelope-scene.scene-fading .env-body,
+  .envelope-scene.scene-fading .env-flap,
+  .envelope-scene.scene-fading .open-btn,
+  .envelope-scene.scene-fading .invited-script,
+  .envelope-scene.scene-fading .env-hint {
+    opacity: 0 !important;
+    transform: translateY(15px) scale(0.96) !important;
+    transition: opacity 0.65s ease, transform 0.65s ease !important;
+  }
+
+  /* STEP 3: Overlay smoothly hat jayega aur Frontpage dikhega */
+  #envelope-overlay {
+    transition: opacity 0.85s ease, visibility 0.85s ease !important;
+  }
+  #envelope-overlay.overlay-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Vaporise Golden Sparkles & Dust Particles */
+  .vapor-sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999999;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 20%, #ffe57f 55%, #c9a24b 90%, transparent 100%);
+    box-shadow: 0 0 10px 2px rgba(254, 213, 71, 0.95), 0 0 22px 5px rgba(255, 255, 255, 0.7);
+    animation: vaporFloat var(--dur, 1.2s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .vapor-sparkle.star {
+    border-radius: 2px;
+  }
+  .vapor-sparkle.star::before,
+  .vapor-sparkle.star::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fed547;
+  }
+  .vapor-sparkle.star::before {
+    top: -45%; left: 38%; width: 24%; height: 190%;
+  }
+  .vapor-sparkle.star::after {
+    top: 38%; left: -45%; width: 190%; height: 24%;
+  }
+
+  @keyframes vaporFloat {
+    0% {
+      transform: translate(0, 0) scale(0.2) rotate(0deg);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+      transform: translate(calc(var(--tx) * 0.3), calc(var(--ty) * 0.3)) scale(1.35) rotate(60deg);
+    }
+    70% {
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(var(--tx), var(--ty)) scale(0) rotate(200deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-monogram">S&nbsp;❤&nbsp;P</div>
+  <div class="pre-ring"></div>
+  <div class="pre-text">Loading Celebration</div>
+</div>
+
+<!-- ============ ENVELOPE OPENING EXPERIENCE ============ -->
+<div id="envelope-overlay">
+  <div class="envelope-scene">
+    <div class="invited-script">You're Invited</div>
+
+    <div class="envelope" id="envelope" role="button" aria-label="Open the invitation">
+      <div class="env-body"></div>
+      <div class="env-letter" id="env-letter-card" style="opacity: 0; visibility: hidden;">
+        <span class="lh hindi">॥ श्री गणेशाय नमः ॥</span>
+        <span class="ln hindi">सोनाली &amp; प्रभात</span>
+        <span class="ld">01 – 03 DEC 2026</span>
+      </div>
+      <div class="env-flap"></div>
+      <div class="wax-seal">S ❤ P</div>
+    </div>
+
+    <button class="open-btn" id="open-btn">Open Invitation</button>
+    <div class="env-hint hindi">आप सपरिवार सादर आमंत्रित हैं।</div>
+  </div>
+</div>
+
+<!-- Falling petals + golden particles canvas -->
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ BACKGROUND MUSIC (starts only after user gesture) ============
+     ▶ TO REPLACE MUSIC: put your royalty-free Indian wedding instrumental at
+       audio/wedding-music.mp3  (or edit CONFIG.musicSrc in js/script.js). -->
+<audio id="bg-music" loop preload="none"></audio>
+<div class="music-player" id="music-player">
+  <button class="music-disc" id="music-disc" aria-label="Play / pause music">
+    <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+  </button>
+  <input class="music-vol" id="music-vol" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Volume">
+</div>
+
+<main>
+
+<!-- ============================================================
+     SCENE 1 — ROYAL PALACE INTRODUCTION  (HERO)
+     Video: Aerial_approach_to_royal_palace_a2fe539b.mp4
+============================================================ -->
+<section class="scene" id="hero">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/iA2eu0aReOMhHIbo?width=2560">
+    <source src="videos/Aerial_approach_to_royal_palace_a2fe539b.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+
+  <!-- floating butterflies (SVG) -->
+  <div class="butterfly" style="top:16%;left:10%">
+    <svg viewBox="0 0 24 24" fill="#e9cf8f"><path d="M12 6c-2-3-7-4-9-1s1 7 5 8c-3 1-5 4-3 6s6 0 7-3c1 3 5 5 7 3s0-5-3-6c4-1 7-5 5-8s-7-2-9 1z"/></svg>
+  </div>
+  <div class="butterfly" style="top:30%;right:12%;animation-delay:-5s">
+    <svg viewBox="0 0 24 24" fill="#e79fb2"><path d="M12 6c-2-3-7-4-9-1s1 7 5 8c-3 1-5 4-3 6s6 0 7-3c1 3 5 5 7 3s0-5-3-6c4-1 7-5 5-8s-7-2-9 1z"/></svg>
+  </div>
+
+  <div class="scene-content">
+    <p class="ganesh-line">॥ श्री गणेशाय नमः ॥</p>
+    <p class="sh-eyebrow">Save the Date</p>
+    <h1 style="font-family:var(--font-caps);letter-spacing:.18em;font-weight:600;">SAVE&nbsp;THE&nbsp;DATE</h1>
+    <p class="sh-sub">With the blessings of God,</p>
+    <p class="sh-eyebrow" style="margin-top:18px">Celebrating the Wedding of</p>
+    <div class="names-row hindi">आयु. सोनाली कुमारी <span style="font-size:.5em;color:#fdf7ea">(Adv.)</span> <span class="heart">❤</span> चि. प्रभात कुमार</div>
+    <div class="date-ribbon">01 DECEMBER – 03 DECEMBER 2026</div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ============================================================
+     LIVE WEDDING COUNTDOWN — 03 December 2026
+============================================================ -->
+<section class="section countdown-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Counting Down To The Big Day</p>
+    <h2 class="section-title reveal">The Wedding Begins In</h2>
+    <p class="section-sub reveal">03 December 2026 · Thursday · आशीर्वाद मैरेज हॉल, चन्द्रपुरा</p>
+
+    <div class="count-grid reveal">
+      <div class="count-cell"><div class="count-num" id="cd-days">00</div><div class="count-label">Days</div></div>
+      <div class="count-cell"><div class="count-num" id="cd-hours">00</div><div class="count-label">Hours</div></div>
+      <div class="count-cell"><div class="count-num" id="cd-mins">00</div><div class="count-label">Minutes</div></div>
+      <div class="count-cell"><div class="count-num" id="cd-secs">00</div><div class="count-label">Seconds</div></div>
+    </div>
+    <div class="countdown-done">The Wedding Celebration Has Begun ❤</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 2 — BRIDE AND GROOM ENTRY
+     Video: Bride_and_groom_walking_bb3ccfc9.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/6aoE1fRIQzCI7rKN?width=2560">
+    <source src="videos/Bride_and_groom_walking_bb3ccfc9.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-script">Two Souls, One Beautiful Journey</p>
+    <div class="names-row hindi">आयु. सोनाली कुमारी <span class="heart">❤</span> चि. प्रभात कुमार</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUR WEDDING STORY
+============================================================ -->
+<section class="section story-section">
+  <div class="floating-hearts" aria-hidden="true"></div>
+  <div class="section-inner">
+    <p class="eyebrow reveal">Our Wedding Story</p>
+    <h2 class="section-title reveal"><span class="script">Two Hearts,</span> One Beautiful Journey</h2>
+    <div class="divider reveal"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.6-8-11a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 5.4-8 11-8 11z"/></svg></div>
+    <p class="section-sub reveal">With the blessings of our families, we begin a lifetime of love, laughter and togetherness.</p>
+
+    <div class="story-grid">
+      <!-- ▶ REPLACE PHOTOS: drop your real photos into images/bride/, images/groom/,
+           images/couple/ and update the src below. Do NOT edit real photographs. -->
+      <div class="story-card gold-frame reveal">
+        <div class="story-photo"><img loading="lazy" src="images/bride/bride1.jpeg" alt="Bride"></div>
+        <h3>आयु. सोनाली कुमारी</h3><span class="role">The Bride</span>
+        <p>सुपौत्री: श्रीमती जानकी देवी एवं श्री होरिल साव</p>
+      </div>
+      <div class="story-card gold-frame reveal reveal-delay-1">
+        <div class="story-photo"><img loading="lazy" src="images/groom/groom1.png" alt="Groom"></div>
+        <h3>चि. प्रभात कुमार</h3><span class="role">The Groom</span>
+        <p>सुपौत्र: श्रीमती बिजला देवी एवं श्री हरिनाथ स्वर्णकार</p>
+      </div>
+      <div class="story-card gold-frame reveal reveal-delay-2">
+        <div class="story-photo"><img loading="lazy" src="images/couple/together.jpeg" alt="Couple"></div>
+        <h3>Together</h3><span class="role">The Couple</span>
+        <p>दो दिल, एक सफ़र</p>
+      </div>
+      <div class="story-card gold-frame reveal reveal-delay-3">
+        <div class="story-photo"><img loading="lazy" src="images/couple/Engagement Ceremony.png" alt="Engagement"></div>
+        <h3>Engagement</h3><span class="role">The Promise</span>
+        <p>शुभ लग्नोत्सव</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 3 — HALDI CELEBRATION
+     Video: Couple_celebrating_Haldi_ceremony_f8733f3a.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="images/events/haldi.jpeg">
+    <source src="videos/Couple_celebrating_Haldi_ceremony_f8733f3a.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-hindi">शुभ लग्नोत्सव एवं हल्दी</p>
+    <p class="sh-eyebrow" style="margin-top:14px">01 December 2026 · Tuesday</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEDDING EVENTS — four premium cards
+============================================================ -->
+<section class="section events-section" id="events">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Three Days of Celebration</p>
+    <h2 class="section-title reveal">Wedding <span class="script">Events</span></h2>
+    <p class="section-sub reveal">01 – 03 December 2026 · Join us for every sacred ritual and joyous moment.</p>
+
+    <div class="events-grid">
+      <!-- CARD 1 · HALDI -->
+      <article class="event-card reveal">
+        <div class="event-media">
+          <span class="event-tag">Pre-Wedding · Day 1</span>
+          <img loading="lazy" src="images/events/haldi.jpeg" alt="Haldi decoration with marigold flowers">
+        </div>
+        <div class="event-body">
+          <h3>शुभ लग्नोत्सव &amp; हल्दी एवं मंडपाच्छादन</h3>
+          <div class="event-date">01 December 2026 · Tuesday</div>
+          <div class="mini-divider"></div>
+          <p class="event-venue">📍 अपने निवास में</p>
+        </div>
+      </article>
+
+      <!-- CARD 2 · MEHNDI -->
+      <article class="event-card reveal reveal-delay-1">
+        <div class="event-media">
+          <span class="event-tag">Pre-Wedding · Day 2</span>
+          <img loading="lazy" src="images/events/mehendi.jpeg" alt="Mehndi henna on bride's hands">
+        </div>
+        <div class="event-body">
+          <h3>देवपूजी &amp; मेहंदी</h3>
+          <div class="event-date">02 December 2026 · Wednesday</div>
+          <div class="mini-divider"></div>
+          <p class="event-venue">📍 अपने निवास में</p>
+        </div>
+      </article>
+
+      <!-- CARD 3 · WEDDING RITUALS -->
+      <article class="event-card reveal reveal-delay-2">
+        <div class="event-media">
+          <span class="event-tag">The Wedding Day</span>
+          <img loading="lazy" src="images/events/venue.jpeg" alt="Royal wedding mandap">
+        </div>
+        <div class="event-body">
+          <h3>घृतढारी एवं मातृपूजन · बारात आगमन · शुभ विवाह</h3>
+          <div class="event-date">03 December 2026 · Thursday</div>
+          <div class="mini-divider"></div>
+          <p class="event-venue">📍 आशीर्वाद मैरेज हॉल, चन्द्रपुरा</p>
+        </div>
+      </article>
+
+      <!-- CARD 4 · RECEPTION & DINNER -->
+      <article class="event-card reveal reveal-delay-3">
+        <div class="event-media">
+          <span class="event-tag">Celebration &amp; Dinner</span>
+          <img loading="lazy" src="images/events/dinner.jpeg" alt="Luxury wedding reception with chandeliers">
+        </div>
+        <div class="event-body">
+          <h3>Wedding Celebration &amp; Dinner — प्रीतिभोज</h3>
+          <div class="event-date">03 December 2026 · Thursday</div>
+          <div class="mini-divider"></div>
+          <p class="event-note">संध्या 7:00 बजे से आपके आगमन तक।</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 4 — FAMILY PUJA
+     Video: mandap.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/TzUYq4wdxmHZlc58?width=2560">
+    <source src="videos/Couple_holding_hands_at_wedding_af666fc2.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-hindi">देवपूजी एवं मातृपूजन</p>
+    <p class="sh-eyebrow" style="margin-top:14px">02 December 2026 · Wednesday</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 5 — WEDDING CEREMONY (MANDAP)
+     Video: Traditional_Hindu_wedding_celebr…_6a176bfa.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/37Cm6qBYiw3U3URQ?width=2560">
+    <source src="videos/mandap.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-script">Shubh Vivah</p>
+    <p class="sh-hindi">शुभ विवाह</p>
+    <p class="sh-eyebrow" style="margin-top:14px">03 December 2026 · Thursday</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEDDING VENUE
+============================================================ -->
+<section class="section venue-section" id="venue">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Where The Magic Happens</p>
+    <h2 class="section-title reveal">Wedding <span class="script">Venue</span></h2>
+    <p class="section-sub reveal">We warmly await you and your family at the wedding venue.</p>
+
+    <div class="venue-wrap">
+      <div class="venue-photo reveal">
+        <img loading="lazy" src="https://sspark.genspark.ai/i/kRCBnfxQcLAcahBS?width=2560" alt="Royal wedding venue">
+        <span class="venue-caption">आशीर्वाद मैरेज हॉल</span>
+      </div>
+
+      <div class="venue-card gold-frame reveal reveal-delay-1">
+        <svg class="pin" viewBox="0 0 24 24" fill="#c9a24b"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        <h3>आशीर्वाद मैरेज हॉल</h3>
+        <p class="v-address">स्टेशन रोड, चन्द्रपुरा<br>जिला: बोकारो, झारखण्ड</p>
+        <!-- ▶ GOOGLE MAPS: replace the q= below with the exact venue location
+             (open Google Maps → search venue → copy the query/coords). -->
+        <iframe class="map-embed" loading="lazy" title="Venue map"
+          src="https://www.google.com/maps?q=Ashirwad%20Marriage%20Hall%2C%20Station%20Road%2C%20Chandrapura%2C%20Bokaro%2C%20Jharkhand&output=embed"></iframe>
+        <div class="venue-actions">
+          <!-- ▶ GET DIRECTIONS: edit this href once you have the exact pin -->
+          <a class="btn btn-gold" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/dir/?api=1&destination=Ashirwad+Marriage+Hall,+Station+Road,+Chandrapura,+Bokaro,+Jharkhand">
+            Get Directions
+          </a>
+          <a class="btn btn-outline" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Ashirwad+Marriage+Hall,+Station+Road,+Chandrapura,+Jharkhand">
+            View on Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 6 — WEDDING VENUE REVEAL
+     Video: venue.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/iA2eu0aReOMhHIbo?width=2560">
+    <source src="videos/venue.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-eyebrow">The Grand Wedding Celebration</p>
+    <h2>आशीर्वाद मैरेज हॉल</h2>
+    <p class="sh-sub hindi">स्टेशन रोड, चन्द्रपुरा, झारखण्ड</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     PHOTO GALLERY
+     ▶ REPLACE PHOTOS: put your real photographs in images/gallery/
+       and swap the src values below. Categories: bride / groom /
+       couple / family / prewedding / moments
+============================================================ -->
+<section class="section gallery-section" id="gallery">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Captured Moments</p>
+    <h2 class="section-title reveal">Photo <span class="script">Gallery</span></h2>
+    <p class="section-sub reveal">Glimpses of our journey — tap any photo to view it full screen.</p>
+
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bride">Bride</button>
+      <button class="filter-btn" data-filter="groom">Groom</button>
+      <button class="filter-btn" data-filter="couple">Couple</button>
+      <button class="filter-btn" data-filter="family">Family</button>
+      <button class="filter-btn" data-filter="prewedding">Pre-Wedding</button>
+      <button class="filter-btn" data-filter="moments">Wedding Moments</button>
+    </div>
+
+    <div class="masonry">
+      <!-- Bride -->
+      <figure class="g-item" data-cat="bride" data-caption="The Bride"><img loading="lazy" src="images/gallery/gallery1.jpeg" alt="Bride"></figure>
+      <!-- Groom -->
+      <figure class="g-item" data-cat="groom" data-caption="The Groom"><img loading="lazy" src="images/gallery/gallery5.jpeg" alt="Groom"></figure>
+      <!-- Mehndi -->
+      <figure class="g-item" data-cat="prewedding" data-caption="Mehndi"><img loading="lazy" src="images/gallery/gallery3.jpeg" alt="Mehndi hands"></figure>
+      <!-- Couple -->
+      <figure class="g-item" data-cat="couple" data-caption="The Couple"><img loading="lazy" src="images/gallery/gallery4.jpeg" alt="Bride and groom"></figure>
+      <!-- Mandap -->
+      <!-- <figure class="g-item" data-cat="moments" data-caption="The Mandap"><img loading="lazy" src="images/gallery/gallery5.jpeg" alt="Wedding mandap"></figure> -->
+      <!-- Haldi -->
+      <figure class="g-item" data-cat="prewedding" data-caption="Haldi"><img loading="lazy" src="images/gallery/gallery6.jpeg" alt="Haldi ceremony"></figure>
+      <!-- Reception -->
+      <figure class="g-item" data-cat="moments" data-caption="Reception"><img loading="lazy" src="images/gallery/gallery7.jpeg" alt="Reception decor"></figure>
+      <!-- Family -->
+      <figure class="g-item" data-cat="family" data-caption="Family"><img loading="lazy" src="images/gallery/gallery8.jpeg" alt="Family"></figure>
+      <!-- Couple -->
+      <figure class="g-item" data-cat="couple" data-caption="Forever"><img loading="lazy" src="images/gallery/gallery3.jpeg" alt="Couple"></figure>
+      
+      <!-- Palace -->
+      <figure class="g-item" data-cat="moments" data-caption="Royal Palace"><img loading="lazy" src="images/gallery/gallery10.jpeg" alt="Royal palace"></figure>
+      <!-- Decor -->
+      <figure class="g-item" data-cat="moments" data-caption="Celebration"><img loading="lazy" src="images/gallery/gallery9.jpeg" alt="Wedding decor"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 7 — ROMANTIC COUPLE MOMENT
+     Video: Couple_holding_hands_at_wedding_af666fc2.mp4
+============================================================ -->
+<section class="scene">
+  <video muted playsinline preload="metadata" loop
+         poster="https://sspark.genspark.ai/i/6aoE1fRIQzCI7rKN?width=2560">
+    <source src="videos/Couple_holding_hands_at_wedding_af666fc2.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="scene-content">
+    <p class="sh-script">Forever Starts Here ❤</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEDDING VIDEO GALLERY
+     ▶ REPLACE VIDEOS: drop your own clips into videos/ and edit the
+       <source src> values. The featured card plays the full highlight reel.
+============================================================ -->
+<section class="section videos-section" id="videos">
+  <div class="section-inner">
+    <p class="eyebrow reveal">The Wedding Film</p>
+    <h2 class="section-title reveal">Video <span class="script">Gallery</span></h2>
+    <p class="section-sub reveal">Tap a card to play with sound — only one video plays at a time.</p>
+
+   <style>
+.video-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.video-card.featured {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/* Vertical video */
+.video-card.featured video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+}
+
+/* Remove play/pause overlay */
+.video-card.featured .vc-play {
+    display: none !important;
+}
+</style>
+
+<div class="video-grid">
+    <div class="video-card featured reveal">
+
+        <video
+            muted
+            autoplay
+            playsinline
+            preload="auto"
+            loop
+            disablepictureinpicture
+            controlslist="nodownload nofullscreen noremoteplayback"
+            poster="https://sspark.genspark.ai/i/iA2eu0aReOMhHIbo?width=2560"
+        >
+            <source src="videos/highlights.mp4" type="video/mp4">
+        </video>
+
+        <div class="vc-title">Wedding Highlights — The Full Celebration</div>
+
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".video-card.featured video");
+
+    if (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.volume = 0;
+
+        video.play().catch(error => {
+            console.log("Autoplay blocked:", error);
+        });
+    }
+});
+</script>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY INVITATION
+============================================================ -->
+<section class="section family-section" id="family">
+  <div class="section-inner">
+    <p class="eyebrow reveal">With Blessings From</p>
+    <h2 class="section-title reveal">Both <span class="script">Families</span></h2>
+
+    <div class="family-grid">
+      <div class="family-card gold-frame reveal">
+        <p class="f-label">Bride's Family</p>
+        <h3>आयु. सोनाली कुमारी (Adv.)</h3>
+        <p class="f-role">सुपौत्री :</p>
+        <p class="f-line">श्रीमती जानकी देवी एवं श्री होरिल साव</p>
+        <p class="f-role" style="margin-top:10px">सुपुत्री :</p>
+        <p class="f-line">श्रीमती सुनिता देवी एवं श्री मनोज कुमार</p>
+        <div class="f-sep"></div>
+        <p class="f-addr">पता: स्टेशन रोड, चन्द्रपुरा,<br>पोस्ट + थाना: चन्द्रपुरा,<br>जिला: बोकारो (झारखण्ड)</p>
+      </div>
+
+      <div class="family-card gold-frame reveal reveal-delay-1">
+        <p class="f-label">Groom's Family</p>
+        <h3>चि. प्रभात कुमार</h3>
+        <p class="f-role">सुपौत्र:</p>
+        <p class="f-line">श्रीमती बिजला देवी एवं श्री हरिनाथ स्वर्णकार</p>
+        <p class="f-role" style="margin-top:10px">सुपुत्र:</p>
+        <p class="f-line">श्रीमती सबिता देवी एवं श्री महेश प्रसाद सोनी</p>
+        <div class="f-sep"></div>
+        <p class="f-addr">ग्राम: सोनार टोला, छतर माण्डू,<br>पोस्ट + थाना: रामगढ़,<br>जिला: रामगढ़ (झारखण्ड)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ▶ TO CHANGE NUMBERS: edit the tel: / wa.me links below AND
+       CONFIG.phones in js/script.js
+============================================================ -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <p class="blessings reveal">With Love and Blessings</p>
+    <h2 class="reveal">आप सपरिवार सादर आमंत्रित हैं।</h2>
+    <p class="invite-en reveal">Your gracious presence will make our celebration more special.</p>
+
+    <div class="contact-btns reveal">
+
+      <a class="btn btn-gold" style="font-weight: 700; letter-spacing: 0; font-size: 24px;">
+        श्री मनोज कुमार
+      </a>
+
+      <a class="btn btn-gold" href="tel:+919931119661">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Call 9931119661
+      </a>
+      <a class="btn btn-gold" href="tel:+916200532441">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Call 6200532441
+      </a>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/919931119661?text=%E0%A4%86%E0%A4%AA%20%E0%A4%B8%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B0%20%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A4%B0%20%E0%A4%86%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%A4%20%E0%A4%B9%E0%A5%88%E0%A4%82%E0%A5%A4">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.2 1.2z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="hindi">॥ श्री गणेशाय नमः ॥</p>
+  <p style="margin-top:8px">सोनाली ❤ प्रभात &nbsp;·&nbsp; 01 – 03 December 2026 &nbsp;·&nbsp; आशीर्वाद मैरेज हॉल, चन्द्रपुरा</p>
+</footer>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" role="dialog" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" aria-label="Next">›</button>
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  (function() {
+    var env = document.getElementById('envelope');
+    var btn = document.getElementById('open-btn');
+    var card = document.getElementById('env-letter-card');
+    var scene = document.querySelector('.envelope-scene');
+    var overlay = document.getElementById('envelope-overlay');
+    var isOpening = false;
+
+    // Card ko Golden Sparkles & Dust mein Vaporise karne ka function
+    function vaporiseCardWithSparkles(cardEl) {
+      if (!cardEl) return;
+      var rect = cardEl.getBoundingClientRect();
+
+      // 85+ sparkles card ke pure surface se nikal کر upar vaporise honge
+      for (var i = 0; i < 85; i++) {
+        var sp = document.createElement('div');
+        sp.className = 'vapor-sparkle' + (i % 3 === 0 ? ' star' : '');
+        var size = Math.random() * 8 + 3;
+        sp.style.width = size + 'px';
+        sp.style.height = size + 'px';
+
+        // Card ke andar random jagah se particle banega
+        var startX = rect.left + Math.random() * rect.width;
+        var startY = rect.top + Math.random() * rect.height;
+        sp.style.left = startX + 'px';
+        sp.style.top = startY + 'px';
+
+        // Vaporise hokar upar aur hawa mein phailne ka rasta
+        var tx = (Math.random() - 0.5) * 220 + 'px';
+        var ty = (-Math.random() * 190 - 40) + 'px';
+        var dur = (Math.random() * 0.65 + 0.65) + 's';
+
+        sp.style.setProperty('--tx', tx);
+        sp.style.setProperty('--ty', ty);
+        sp.style.setProperty('--dur', dur);
+
+        document.body.appendChild(sp);
+        setTimeout(function(el) {
+          if (el && el.parentNode) el.parentNode.removeChild(el);
+        }, 1450, sp);
+      }
+    }
+
+    function startCardVaporiseSequence(e) {
+      if (isOpening) return;
+      isOpening = true;
+
+      // Default script.js ke jaldi band hone wale handler ko roko taaki pura animation dikhe
+      if (e) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+
+      // Audio start karo (agar user ne click kiya hai)
+      var bgMusic = document.getElementById('bg-music');
+      var musicDisc = document.getElementById('music-disc');
+      if (bgMusic && bgMusic.paused) {
+        if (!bgMusic.getAttribute('src')) {
+          bgMusic.src = 'audio/wedding-music.mp3';
+        }
+        bgMusic.play().then(function() {
+          if (musicDisc) musicDisc.classList.add('playing');
+        }).catch(function(){});
+      }
+
+      // STEP 1 (0ms): Envelope flap khulega aur Card bahar nikal kar upar jayega
+      if (env) env.classList.add('env-unlocked');
+      if (card) {
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+      }
+
+      // STEP 2 (1150ms): Jab card upar pahunch jaye, tab wahi card sparkle hokar vaporise (dissolve) ho jayega
+      setTimeout(function() {
+        vaporiseCardWithSparkles(card);
+        if (card) card.classList.add('card-vaporising');
+        if (scene) scene.classList.add('scene-fading');
+      }, 1150);
+
+      // STEP 3 (2000ms): Card vaporise hone ke baad Frontpage (Hero Video) open ho jayega
+      setTimeout(function() {
+        if (overlay) {
+          overlay.classList.add('overlay-hidden', 'hidden', 'hide');
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+          setTimeout(function() {
+            overlay.style.display = 'none';
+          }, 850);
+        }
+        document.body.classList.remove('locked', 'no-scroll');
+        document.body.style.overflow = '';
+
+        var heroVid = document.querySelector('#hero video');
+        if (heroVid && heroVid.paused) {
+          heroVid.play().catch(function(){});
+        }
+      }, 2000);
+    }
+
+    // Capture phase (true) lagaya hai taaki script.js se pehle humara animation chale
+    if (env) env.addEventListener('click', startCardVaporiseSequence, true);
+    if (btn) btn.addEventListener('click', startCardVaporiseSequence, true);
+  })();
+</script>
+</body>
+</html>
